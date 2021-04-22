@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+
+%%%%%%%% General %%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{makeidx}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage[spanish]{babel}
+\usepackage{multicol} % Permite escribir en dos columnas.
+\usepackage{csquotes}
+\usepackage{siunitx} % Permite usar unidades del Sistema Internacional.
+\usepackage[final]{pdfpages}
+
+%%%%%%%% Links  %%%%%%%%%
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{cleveref}
+
+%%%%%%%% Dependencias para excel2latex %%%%%%%%%
+\usepackage{booktabs} 
+\usepackage{colortbl} 
+\usepackage{multirow}
+\usepackage{bigstrut}
+
+%%%%%%%% Imagenes y bibliografía %%%%%%%%%
+\usepackage{biblatex}
+\addbibresource{bibliography/bib.bib}
+
+%%%%%%%% Margenes APA %%%%%%%%%
+\usepackage[lmargin=4cm, rmargin=2.5cm, tmargin=2.5cm, bmargin=2.5cm]{geometry}
+
+%%%%%%%% Estilo de footers and headers %%%%%%%%%
+\usepackage{fancyhdr} %Headers y footers
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textbf{Alumno: Franco Calvo}}
+\lhead{\textbf{Organización de obras}}
+\rfoot{Página \thepage}
+
+
+\begin{document}
+
+% CLASES
+\subfile{clases/20210414}
+\subfile{clases/20210421}
+% FINdeNOTAS
+
+
+\end{document}
