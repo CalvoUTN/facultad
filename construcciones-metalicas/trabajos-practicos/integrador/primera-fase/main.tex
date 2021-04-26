@@ -1,0 +1,84 @@
+\documentclass[a4paper]{article}
+
+%%%%%%%% General %%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{lscape}
+\usepackage{makeidx}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{multicol} % Permite escribir en dos columnas.
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{siunitx} % Permite usar unidades del Sistema Internacional.
+\usepackage[final]{pdfpages}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\usepackage{cleveref}
+
+\usepackage{pgf}
+\usepackage{pgfpages}
+
+
+%%%%%%%% Borde para el profe  %%%%%%%%%
+\usepackage{calc}
+\usepackage{eso-pic}
+
+\newlength{\PageFrameTopMargin}
+\newlength{\PageFrameBottomMargin}
+\newlength{\PageFrameLeftMargin}
+\newlength{\PageFrameRightMargin}
+
+\setlength{\PageFrameTopMargin}{1cm}
+\setlength{\PageFrameBottomMargin}{1cm}
+\setlength{\PageFrameLeftMargin}{1cm}
+\setlength{\PageFrameRightMargin}{1cm}
+
+\makeatletter
+
+\newlength{\Page@FrameHeight}
+\newlength{\Page@FrameWidth}
+
+\AddToShipoutPicture{
+  \thinlines
+  \setlength{\Page@FrameHeight}{\paperheight-\PageFrameTopMargin-\PageFrameBottomMargin}
+  \setlength{\Page@FrameWidth}{\paperwidth-\PageFrameLeftMargin-\PageFrameRightMargin}
+  \put(\strip@pt\PageFrameLeftMargin,\strip@pt\PageFrameTopMargin){
+    \framebox(\strip@pt\Page@FrameWidth, \strip@pt\Page@FrameHeight){}}}
+
+\makeatother
+
+%%%%%%%% Dependencias para excel2latex %%%%%%%%%
+\usepackage{booktabs} 
+\usepackage{colortbl} 
+\usepackage{multirow}
+\usepackage{bigstrut}
+
+%%%%%%%% Imagenes y bibliografía %%%%%%%%%
+\usepackage{biblatex}
+\addbibresource{bibliography/bib.bib}
+
+%%%%%%%% Margenes APA %%%%%%%%%
+\usepackage[lmargin=4cm, rmargin=2.5cm, tmargin=2.5cm, bmargin=2.5cm]{geometry}
+
+\begin{document}
+
+\tableofcontents
+\clearpage
+
+\subfile{sections/01-comentarios}
+\clearpage
+\subfile{sections/02-viento}
+\subfile{sections/03-cargasbase}
+
+\clearpage
+
+\printbibliography
+\end{document}

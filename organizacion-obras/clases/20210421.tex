@@ -61,6 +61,8 @@ obra.
 
 \subsection{Costo de equipo}
 
+\subsubsection{Costo horario}
+
 Para poder determinar el costo debemos debemos determinar el costo individual de
 cada máquina. Entonces debemos determinar tanto el \textit{costo horario $\$/h$},
 y el \textit{rendimiento $h/ h^3$}. 
@@ -78,9 +80,16 @@ Este costo incluye tres cosas:
     El cálculo de amortización se hace como:
     
     \begin{align*}
-      A = \frac{\text{Valor nuevo - Valor residual}}{\text{Vida útil}}
+      A = \frac{\text{Valor nuevo - Valor residual}}{\text{Vida útil}} \tag{Amortización}
+    .\end{align*}
+
+    Por otro lado tenemos el \textit{interés}, que es el monto tendiente a compensar
+    la pérdida de intereses que nos huibese dado el banco en vez de realizar la
+    inversión en equipo. El tiempo será normalmente con una tasa anual:
+
+    \begin{align*}
+      I &= (V_n - V_r) * I * n * C \tag{Intereses} \\[5pt] 
+      C &= - \frac{n+1}{2*n} \approx 0.5\tag{Coef. de Gabay}
     .\end{align*}
 \end{description}
-
-
 \end{document}
