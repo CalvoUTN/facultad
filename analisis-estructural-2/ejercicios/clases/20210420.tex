@@ -6,18 +6,18 @@
 
 \subsection{Ejercicio 1: método estático}
 
-\href{https://youtu.be/6VVqDEFBOIk}{Clase 1 (20210420)}
+%\href{https://youtu.be/6VVqDEFBOIk}{Clase 1 (20210420)}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{../images/20210420/ej1}
+  \includegraphics[width=0.8\textwidth]{./images/20210420/ej1}
   \caption{Consigna}
   \label{fig:ej1}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{../images/20210420/ej1_1}
+  \includegraphics[width=0.8\textwidth]{./images/20210420/ej1_1}
 \end{figure}
 
 Las rigideces de piso son $K_{p_2}=\SI{204}{kN / cm}$, $K_{p_1}=\SI{325}{kN /cm}$
@@ -38,7 +38,7 @@ Además, verificamos que estando en una estructura tipo B y estando en una Zona 
 no superamos una altura de $\SI{45}{m}$. 
 
 
-\subsection{Deterimnación de carga gravitatorio de piso $W_k$}
+\subsubsection{Deterimnación de carga gravitatorio de piso $W_k$}
 
 Según Art. 3.6. Ejemplo para 2º Piso:
 
@@ -68,7 +68,7 @@ $\SI{3}{kN / m^2}$ por el área del piso. Entonces:
   W_1 &= \SI{3415}{kN}
 .\end{align*}
 
-\subsection{Cálculo de fuerza fundamental}
+\subsubsection{Cálculo de fuerza fundamental}
 
 Primero, sabemos que la fuerza será:
 
@@ -92,7 +92,7 @@ Todo esto es posible automatizarlo con la siguiente tabla:
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.8\textwidth]{../images/20210420/tabla_calc}
+  \includegraphics[width=0.8\textwidth]{./images/20210420/tabla_calc}
   \caption{Tabla de calculo}
   \label{fig:tabla_calc}
 \end{figure}
@@ -101,11 +101,13 @@ Y aplicando \cref{matriz-def} podemos sacar las deformaciones, y por último tam
 podemos encontrar el periodo de la siguiente forma:
 
 \begin{align*}
-  T = 2*\pi \sqrt{\frac{88.8*10^{-3}}{\SI{981}{cm / s^2}*3.252*10^{-3}}} = \SI{1.05}{s} 
+  T &= 2 * \pi * \sqrt{\frac{\sigma W_i * u_i^2}{g*\sigma F_i*u_i}}  \\[5pt]
+  T &= 2*\pi \sqrt{\frac{88.8*10^{-3}}{\SI{981}{cm / s^2}*3.252*10^{-3}}} = \SI{1.05}{s}
 .\end{align*}
 
-De cualquier forma podemos encontrar el \textbf{período fundamental aproximado},
-deonminado $T_a$ de la siguiente forma:
+Luego debemos obtener el \textbf{período fundamental aproximado},
+denominado $T_a$, y compararlo y adoptar el menor entre los dos valores de 
+períodos obtenidos.
 
 \begin{align*}
   T_a = C_r * H^x = 0.0466 * 10.4^{0.9} = \SI{0.38}{s} 
@@ -117,7 +119,11 @@ en función de  $a_s = 0.35$ que sale de la Tabla 3.1 del CIRSOC 103. Esto nos i
 que el valor del período a adoptar será:
 
 \begin{align*}
-  T = T_a * 1.4 = 0.35 * 1.4 = \SI{0.49}{s}
+  T = T_a * 1.4 = 0.38 * 1.4 = \SI{0.53}{s}
 .\end{align*}
+
+ Vemos que tenemos que tenemos que entonces adoptar el valor de $T = \SI{0.53}{s}$.
+
+% COMPLETAR
 
 \end{document}
