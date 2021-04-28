@@ -1,0 +1,88 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\clearpage
+
+\subsection{Ejemplo teorico-práctico}
+
+Siguiendo un ejemplo práctico, siguiendo la estructura mostrada en \cref{fig:real}
+
+\begin{figure}[ht]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{../images/20210426/ej1}
+  \caption{A subfigure}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{../images/20210426/ej2}
+  \caption{A subfigure}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{Fotos reales de la estructura}
+\label{fig:real}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../images/20210426/plano}
+  \caption{Plano a calcular}
+  \label{fig:plano}
+\end{figure}
+
+Consideramos una estructura como la siguiente:
+
+
+%\begin{figure}[h]
+%  \centering{
+%  \resizebox{0.5\textwidth}{!}{\input{../images/20210426/dibujo.tex}}}
+%  \caption{your caption} \label{fig:figureone}
+%\end{figure}
+
+
+Entonces, tenemos que considerar un $k=1.2$. 
+Consideramos una altura desde $h = \SI{2.8}{m}$, con un, y tenemos un perfil
+\textbf{W200.59}, que vamos a considerar como el \textbf{W8x40} que se encuentra
+en el reglamento CIRSOC. El perfil tendrá un $f_y = \SI{345}{MPa} $ y  
+$f_u = \SI{450}{MPa}$.
+
+Desarrollo:
+
+\begin{align*}
+  \lambda &= \frac{1}{\pi} * \frac{k*L}{r} * \sqrt{\frac{f_y}{E}} \\[5pt] 
+  \lambda &=   \frac{1}{\pi} * \frac{1*280}{5.18} * \sqrt{\frac{355}{200000}} \\[5pt]
+  \lambda &= 0.8698
+.\end{align*}
+
+Entonces podemos obtener los valores de $F_{cr}$ de la siguiente forma:
+
+\begin{align*}
+  f_{cr} &= 0.658^{0.8698^2} * F_y\\[5pt] 
+  f_{cr} &= \SI{258.6}{MPa}
+.\end{align*}
+
+Conseguimos entonces los valores de tensión y carga critica como:
+
+\begin{align*}
+  P_d &= \phi * f_{cr} * A \\[5pt]
+  P_d &= \SI{1660}{kN} 
+.\end{align*}
+
+\subsubsection{Recordatorio}
+
+Es necesario acordarse de que cuando $\lambda\leq 1.5$ se utiliza:
+
+\begin{align*}
+  F_{cr} = 0.658^{\lambda^2}*F_y
+.\end{align*}
+
+Y cuando se da que $\lambda\geq 1.5$ tenemos que considerar:
+
+\begin{align*}
+  F_{cr} = \frac{0.877}{\lambda^2}*F_y
+.\end{align*}
+
+\end{document}
