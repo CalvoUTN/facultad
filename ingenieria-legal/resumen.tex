@@ -13,16 +13,16 @@
 \usepackage{csquotes}
 \usepackage{siunitx} % Permite usar unidades del Sistema Internacional.
 \usepackage[final]{pdfpages}
-
-%%%%%%%% Links  %%%%%%%%%
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
-    filecolor=magenta,      
+    filecolor=magenta,
     urlcolor=cyan,
 }
 \usepackage{cleveref}
+
+
 
 %%%%%%%% Dependencias para excel2latex %%%%%%%%%
 \usepackage{booktabs} 
@@ -42,18 +42,23 @@
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{\textbf{Alumno: Franco Calvo}}
-\lhead{\textbf{Cimentaciones}}
+\lhead{\textbf{Ingeniería legal}}
 \rfoot{Página \thepage}
 
 
 \begin{document}
 
+\tableofcontents
+\clearpage
+
 % CLASES
-\subfile{clases/20210419}
-\subfile{clases/20210421}
-\subfile{clases/20210426}
-\subfile{clases/202100512}
-% FINdeNOTAS
+\subfile{clases/resumen-1-examen}
+%\subfile{clases/20210420}
+%\subfile{clases/20210421}
+%\subfile{clases/20210427}
+%\subfile{clases/20210428}
+%\subfile{clases/20210512}
+% FIN
 
 
 \end{document}
