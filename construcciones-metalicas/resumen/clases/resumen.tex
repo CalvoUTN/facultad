@@ -70,9 +70,17 @@ debemos encontrar el área efectiva. Esto se puede encontrar mediante la fórmul
   A_e = A_n * U
 .\end{align*}
 
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../images/resumen/x}
+  \caption{Determinación de $\overline{x}$}
+  \label{fig:x}
+\end{figure}
+
 Donde U es un factor que debe ser obtenido, y que depende de la distancia 
 $\overline{x}$, que es la distancia entre el plano de la unión y el centro de 
 la unión. Esto se puede ver en la \textbf{Figura B.3.1} del CIRSOC 301 (pág 69).
+También se muestra un ejemplo común para perfiles L en la figura \Cref{fig:x}
 En nuestro caso obtenemos $\overline{x}$ como:
 \begin{align*}
   \overline{x} = B - x_g - b
@@ -134,14 +142,16 @@ de la siguiente forma:
     \textbf{Caso A:} cuando
     $F_u * A_{nt} * (10^{-1}) \geq 0.6 * F_u * A_{nv} * (10^{-1})$, entonces:
     \begin{align*}
-      \phi * R_n = \phi * [0.6 * F_y * A_{gv} * F_u * A_{nt}] * (10^{-1})
+      \phi * R_n = \phi * [0.6 * F_y * A_{gv} + F_u * A_{nt}] * (10^{-1})
     .\end{align*}
     \textbf{Caso B:} cuando
     $F_u * A_{nt} * (10^{-1}) \leq 0.6 * F_u * A_{nv} * (10^{-1})$, entonces:
     \begin{align*}
-      \phi * R_n = \phi * [0.6 * F_u * A_{nv} * F_u * A_{gt}] * (10^{-1})
+      \phi * R_n = \phi * [0.6 * F_u * A_{nv} + F_y * A_{gt}] * (10^{-1})
     .\end{align*}
 \end{description}
+
+Donde el valor de $\phi=0.75$.
 
 \subsection{Chapa de unión}
 
@@ -174,7 +184,7 @@ Para esto nos valemos de la \textit{teoría de Euler}, que tiene como hipótesis
 \begin{enumerate}
   \item El material es isótropo, homogéneo y elástico.
   \item La barra es perfectamente recta inicialmente y sección constante.
-  \item La fuerza de compresión actua a lo largo del eje recto.
+  \item La fuerza de compresión actúa a lo largo del eje recto.
   \item Los elementos de la barra son articulaciones perfectas sin fricción, por
     lo que el acortamiento no esta restringido.
   \item Las deformaciones son pequeñas.
@@ -186,9 +196,11 @@ Vamos a considerar dos tipos de perfiles: barras simples y barras armadas.
 \subsection{Pandeo local}
 
 Para poder hacer esto consideramos la sección A-B.5 del Apéndice B del CIRSOC
-301. 
+ 301. Lo primero es definir si tenemos elementos esbeltos, que podemos hacer
+ mediante la \textbf{Tabla B.5.1} del CIRSOC 301 (pág 72). En caso de hacerlo
+ es necesario seguir con ésta sección.
 
-Lo primero que debemos encontrar es el factor \textbf{Q}, que es una correción
+Lo primero que debemos encontrar es el factor \textbf{Q}, que es una corrección
 por \textbf{elementos esbeltos}. La misma es igual a:
 \begin{align*}
   Q = Q_s * Q_a
@@ -258,8 +270,8 @@ esbeltez global. Conociendo el valor de k, tenemos:
 
 Luego, \textbf{proponemos un valor} de $Q_a$. Un buen valor es 0.8. Luego,
 obtenemos, ya habiendo determinado el valor de $Q_s$ anteriormente.
-A partir de la sección \textbf{A-B.5.3.b}, dependiendo del tipo de sección,
-adoptamos un caso.
+A partir de la sección \textbf{A-B.5.3.b} (pág 209), dependiendo del tipo de 
+sección, adoptamos un caso.
 
 Con el valor propuesto, cuando:
 
@@ -272,7 +284,7 @@ Cuando:
 
 \begin{align*}
   \sqrt{Q} &* \lambda_c  \geq 1.5 \\[5pt]
-  F_{cr} &= \left( 0.\frac{877}{\lambda_c^2} \right) * F_y \tag{A-B.5.16}
+  F_{cr} &= \left( \frac{0.877}{\lambda_c^2} \right) * F_y \tag{A-B.5.16}
 .\end{align*}
 
 Luego, adoptamos:
@@ -353,7 +365,7 @@ Los valores de  $G_i$ se obtienen como:
    G = \frac{\Sigma (\beta * I_c / L_c)}{\Sigma (I_g / L_g)}
 .\end{align*}
 
-Donde se consideran todas las barras rigidamente unidas al nudo y contenidas en
+Donde se consideran todas las barras rígidamente unidas al nudo y contenidas en
 el plano de pandeo de la columna considerada, $I_c$ es el momento de inercia de
 la columna, $L_c$ la longitud no arriostrada de la columna, $I_g$ el momento
 de inercia de la  viga y $L_g$ la longitud no arriostrada de la viga.
@@ -403,8 +415,8 @@ En este caso, $\phi=0.85$, ya que es resistencia a la compresión.
 
 \subsection{Columnas armadas}
 
-Las columnas armadas estan conformadas por varios perfiles y generalmente
-diagonales. En partícular, consideramos las del Grupo 4, definidas en 
+Las columnas armadas están conformadas por varios perfiles y generalmente
+diagonales. En particular, consideramos las del Grupo 4, definidas en 
 \textbf{A-E.4.2.1.} del CIRSOC 301 (pág 215).
 
 En las mismas consideramos como carga última, tanto el valor de $P_u$ como el de
@@ -475,10 +487,11 @@ que se obtiene como:
   e_o = \frac{k*L}{500} \text{, en cm}
 .\end{align*}
 
-Entonces podemos obtener el momento $M_s$ como:
+Entonces podemos obtener el momento $M_s$ como se escribe a continuación. Si se
+contase con un momento último $M_u$, es necesario considerarlo en este momento.
 
  \begin{align*}
-   M_s = \frac{P_u*e_o}{1-P_u /P_{cm}} * (10^{-2})\text{, en kNm}
+   M_s = \frac{P_u*e_o* (10^{-2})+M_u}{1-P_u /P_{cm}} \text{, en kNm}
 .\end{align*}
 
 \subsubsection{Paso 2: determinación de carga última $P_{u1}$}
@@ -502,18 +515,18 @@ Esta determinación se hace con la siguiente ecuación:
 .\end{align*}
 
 Donde el $F_{cr}$ se determinara según ciertas condiciones. Primero debemos
-determinar que esbeltez geometrica debemos adoptar. En principio, consideramos
+determinar que esbeltez geométrica debemos adoptar. En principio, consideramos
 dos:
 
 \begin{enumerate}
   \item \textit{Esbeltez local:} es la esbeltez que se da entre en dirección del
-    eje debil de cada perfil, pero que se encuentra arriostrado debido a las 
+    eje débil de cada perfil, pero que se encuentra arriostrado debido a las 
     vigas de celosía. 
   \item \textit{Esbeltez global:} es la esbeltez de la pieza en la dirección
     paralela al eje libre, y que normalmente se encuentra arriostrada.
 \end{enumerate}
 
-Si consideramos la \Cref{fig:armada}, y considerando las esbleteces nombradas,
+Si consideramos la \Cref{fig:armada}, y considerando las esbelteces nombradas,
 tenemos:
 
 \begin{align*}
@@ -525,7 +538,7 @@ Esto es generalmente así, ya que se arriostra con celosía generalmente la
 dirección más débil, y se lo arriostra entre columnas en la otra dirección para
 reducir el valor de $h$, que es la distancia libre.
 
-Adoptando el menor de ambos valores, tenemos:
+Adoptando el mayor de ambos valores, tenemos:
 
 \begin{align*}
   \lambda = \frac{\lambda_x}{\pi} * \sqrt{\frac{f_y}{E}}   
