@@ -118,22 +118,23 @@ la siguiente formula:
 .\end{align*}
 
 Donde el valor de $C_f$ y $X$ quedan determinados según la \textbf{Tabla 6.2}
-(pág 69). 
+(pág 69), pero para lo que se debe primero determinar lo que se describe en
+\Cref{ax}.
 
- \subsubsection{Valores de $a_x$,  $C_a$ y  $C_v$}
+\subsubsection{Valores de $a_x$,  $C_a$ y  $C_v$}\label{ax}
 
- Los valores mencionados son determinados en la \textbf{Tabla 3.1} (pág 50) del
- capitulo 3 del CIRSOC 103. Se tiene como consideración:
+Los valores mencionados son determinados en la \textbf{Tabla 3.1} (pág 50) del
+capitulo 3 del CIRSOC 103. Se tiene como consideración:
 
- \begin{align*}
-   N_a &= 1 \\[5pt]
-   N_v &= 1.2 \\[5pt]
-   T_2 &= \frac{C_v}{2.5*C_a} \\[5pt]
-   T_1 = 0.2 * T_2
- .\end{align*}
+\begin{align*}
+  N_a &= 1 \\[5pt]
+  N_v &= 1.2 \\[5pt]
+  T_2 &= \frac{C_v}{2.5*C_a} \\[5pt]
+  T_1 &= 0.2 * T_2
+.\end{align*}
 
- Donde también queda el valor $T_3$ determinado según la  \textbf{Tabla 3.2},
- que se reproduce a continuación:
+Donde también queda el valor $T_3$ determinado según la  \textbf{Tabla 3.2},
+que se reproduce a continuación:
 
 \begin{center}
   \begin{tabular}{|c|c|}
@@ -148,11 +149,26 @@ Donde el valor de $C_f$ y $X$ quedan determinados según la \textbf{Tabla 6.2}
     \hline
     1 & 3 \\
     \hline
- \end{tabular} 
+  \end{tabular} 
 \end{center}
 
-Es importante la determinación de $S_a$, que es la ordenada espectral o 
-seudoaceleración según la zona sísmica y tipo de suelo.
+Es importante la determinación de $S_d$, que es la ordenada espectral o 
+seudoaceleración según la zona sísmica y tipo de suelo. Otro valor que debemos
+obtener es el de $a_s$.
+
+\subsubsection{Espectros de diseño}
+
+Luego que se sepa el valor de período $T$, es necesario determinar $S_a$ según
+las expresiones del  \textbf{Art. 3.5.1} (pág 49), que se desarrollan a
+continuación:
+
+\begin{align*}
+  S_a &= C_a * (1 + 1.5 * T / T_1  \hspace{0.5cm} \text{para } T \leq T_1\\[5pt]
+  S_a &= 2.5*C_a  \hspace{0.5cm} \text{para } T_1 \leq T \leq T_2  \\[5pt]
+  S_a &= C_v / T  \hspace{0.5cm} \text{para } T_2 \leq T \leq T_3  \\[5pt]
+  S_a &= C_v * T_3 /T² \hspace{0.5cm} \text{para } T \leq T_3 
+\end{align*}
+
 
 \subsubsection{Acciones gravitatorias a considerar}
 
@@ -201,7 +217,6 @@ se debe cumplir es:
     nivel es igual a la mitad de la distancia entre los muros descritos en 3).
 \end{enumerate}
 
-\subsection{Procedimiento}
 
 \subsubsection{Coeficiente sísmico de diseño}
 
@@ -221,7 +236,7 @@ de la zona sísmica. La misma se resume a continuación:
     \hline
     4 & 0.5 \\
     \hline
- \end{tabular} 
+  \end{tabular} 
 \end{center}
 
 Con esto podemos determinar el coeficiente de diseño sísmico de diseño para
@@ -255,7 +270,52 @@ la construcción y el plano medio del espacio de separación debe ser:
   Y_k \geq \SI{2.5}{cm}
 .\end{align*}
 
+\subsection{Método estático}
 
+En éste método es necesario determinar los esfuerzos horizontales. Lo primero
+es determinar los esfuerzos de corte en la base, que se logra como:
+
+\begin{align*}
+  V_o &=  C * W \\[5pt] 
+  W &= \Sigma W_i
+.\end{align*}
+
+El \textbf{coeficiente sísmico de diseño} se debe calcular según \textbf{Art 6.2.2}
+(pág 67), con las posibilidades:
+
+\begin{align*}
+  C = 2.5 * C_a * \gamma_r / R \hspace{0.5cm} &\text{para } T \leq T_2 \\[5pt]
+  C = S_a * \gamma_r / R \hspace{0.5cm} &\text{para } T \geq T_2 \\[5pt]
+  C \geq 0.8 * a_s * N_v / R \hspace{0.5cm}&\text{para zonas sísmicas 3 y 4}  \\[5pt]
+  C \geq  0.11 * C_a * \gamma_r \hspace{0.5cm} &\text{para zonas sísmicas 0, 1 y 2}
+.\end{align*}
+
+El mismo se hace luego de determinar el $T$ adoptado, como se explicará en
+\Cref{periodo}.
+
+
+\subsubsection{Distribución de fuerzas horizontales}
+
+Se puede determinar la fuerza sísmica horizontal $F_k$, que se aplica en el
+baricentro de la carga gravitatoria $W_k$ ubicada en el nivel $k$ con la
+expresión dada en el  \textbf{Art 6.2.4.1} (pág 69).
+
+\begin{align*}
+  F_k = \frac{W_k * h_k * V_o}{\Sigma W_i * h_i}
+.\end{align*}
+
+\subsubsection{Determinación del periodo}\label{periodo}
+
+
+% COMPLETAR VIENDO CLASE. CALCULO NO APROXIMADO DE PERIODO. 
+% Usa formula C.6.1 de los Comentarios del CIRSOC 103.
+
+\subsubsection{Factor de reducción}
+
+Según el \textbf{Art 5.1} del CIRSOC 103 (pág 59), se puede utilizar un factor
+de reducción $R$ que toma el comportamiento en estado último de la construcción.
+Lo mismo se hace mediante la  \textbf{Tabla 5.1} (pág 60). En los casos vistos,
+normalmente se considera para pórticos un $R=7$.
 
 
 
