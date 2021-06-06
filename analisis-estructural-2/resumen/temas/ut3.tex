@@ -1,0 +1,263 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Unidad temática 3: sismoresistencia}
+
+Para este tipo de problemática nos encontramos con tres tipos de soluciones:
+
+\begin{itemize}
+  \item Método simplificado.
+  \item Método estático.
+  \item Método dinámico.
+\end{itemize}
+
+En este caso solo vamos a explorar los dos primeros casos. Vamos a tomar como
+guía el reglamento CIRSOC 103.
+
+\subsection{Zonificación y clasificación}
+
+\subsubsection{Zonificación sísmica}
+
+Lo primero que se necesita hacer es determinar la zona sísmica. En el país hay
+5, desde 0 (peligrosidad muy reducida) a 4 (peligrosidad muy alta). La misma
+puede determinarse a partir de la \textbf{Figura 2.1} (pág 33) del CIRSOC 103.
+
+\subsubsection{Clasificación del sitio}
+
+Luego, es necesario conocer la influencia del suelo. Existen tres tipos de
+suelos, con 6 tipos de sub-clasificaciones. En general, se determinan mediante
+el uso del ensayo SPT o mediante un ensayo que nos permita obtener la 
+velocidad media de la onda de corte $V_{sm}$, o utilizando una correlación 
+con el SPT o la resistencia al corte no drenada.
+
+Luego, es posible determinar el tipo de suelo mediante la \textbf{Tabla 2.2} 
+(pág 34) del CIRSOC 103. 
+
+\subsubsection{Clasificación de construcción según función}
+
+También es necesario determinar el grupo de la construcción. Según el \textbf{Art 2.4}
+del CIRSOC 103 (pág 35), quedan determinados los siguientes grupos:
+
+\begin{description}
+  \item[Grupo $A_o$ ($\gamma_r = 1.5$ )]  construcciones que cumplen funciones 
+    esenciales. Algunos ejemplos son: sectores radioactivos con potencias 
+    mayores a 20MW, depósitos de gases, áreas de aeropuertos, hospitales, 
+    centros policiales y bomberos, centrales de comunicación, centrales de 
+    energía de emergencia y servicios sanitarios básicos.
+  \item[Grupo A ($\gamma_r = 1.3$)] normalmente son edificios de servicios médicos,
+    estaciones de radio y de televisión, centrales telefónicas, oficinas de
+    correos, edificios gubernamentales, escuelas, colegios, universidades,
+    cines, teatros, estadios, templos, terminales de transporte, grandes 
+    comercios e industrias, museos, bibliotecas, centrales de energía, plantas
+    de bombeo, etc.
+  \item[Grupo B ($\gamma = 1$] construcciones destinadas a viviendas unifamiliares
+    o multifamiliares, hoteles, comercios, entre otros.
+  \item[Grupo C ($\gamma_r = 0.8$)] construcciones aisladas con ocupación menor a 10,
+    tales como depósitos, establos, silos, etc.
+\end{description}
+
+\subsubsection{Excepción para Zona 0}
+
+Para todos los edificios que no sean del grupo $A_o$ que se encuentre en la 
+zona, no es aplicable el reglamento si se cumple alguna de las siguientes
+condiciones:
+
+ \begin{enumerate}
+  \item Las construcciones de hasta 3 pisos o de 12m de altura.
+  \item Estructuras de más de 12m que han sido diseñadas al viento, donde
+    se cumplen las siguientes tres condiciones de forma simultanea:
+    
+    \begin{itemize}
+      \item Han sido verificadas a las dos direcciones principales.
+      \item La resultante en cada dirección es mayor o igual al 1.5\% del peso
+        de la estructura.
+       \item El punto de aplicación de la fuerza resultante de la acción del
+         viento se encuentra aproximadamente coincidente o por encima del 
+         centro de gravedad de la construcción.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Espectro de diseño}
+
+Lo primero que se debe hacer es la determinación del \textbf{período fundamental}
+de la estructura. En todo caso, lo primero que se verifica, según \textbf{Art 6.2.3}
+(pág 67) es la siguiente condición:
+
+\begin{align*}
+  T \leq C_u * T_a
+.\end{align*}
+
+Lo primero que se determina es $C_u$, según  \textbf{Tabla 6.1} (pág 68), que se
+reproduce:
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    $a_s$ & $C_u$ \\
+    \hline
+    $\geq $ 0.35 & 1.4 \\
+    \hline
+    0.25 & 1.45 \\
+    \hline
+    0.15 & 1.60 \\
+    \hline
+    $\leq $ 0.08  & 0.5 \\
+    \hline
+ \end{tabular} 
+\end{center}
+
+\subsubsection{Período aproximado}
+
+
+Luego, según \textbf{Art 6.2.3.2} (pag 68) es posible aproximarlo mediante
+la siguiente formula:
+
+\begin{align*}
+  T_a = C_f * H^x
+.\end{align*}
+
+Donde el valor de $C_f$ y $X$ quedan determinados según la \textbf{Tabla 6.2}
+(pág 69). 
+
+ \subsubsection{Valores de $a_x$,  $C_a$ y  $C_v$}
+
+ Los valores mencionados son determinados en la \textbf{Tabla 3.1} (pág 50) del
+ capitulo 3 del CIRSOC 103. Se tiene como consideración:
+
+ \begin{align*}
+   N_a &= 1 \\[5pt]
+   N_v &= 1.2 \\[5pt]
+   T_2 &= \frac{C_v}{2.5*C_a} \\[5pt]
+   T_1 = 0.2 * T_2
+ .\end{align*}
+
+ Donde también queda el valor $T_3$ determinado según la  \textbf{Tabla 3.2},
+ que se reproduce a continuación:
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Zona sísmica} & $T_3$ (s) \\
+    \hline
+    4 & 13 \\
+    \hline
+    3 & 8 \\
+    \hline
+    2 & 5 \\
+    \hline
+    1 & 3 \\
+    \hline
+ \end{tabular} 
+\end{center}
+
+Es importante la determinación de $S_a$, que es la ordenada espectral o 
+seudoaceleración según la zona sísmica y tipo de suelo.
+
+\subsubsection{Acciones gravitatorias a considerar}
+
+Se deben considerar en las acciones sísmicas horizontales las cargas permanentes
+y una fracción de las cargas variables o de servicio. La acción a considerar
+es mediante la siguiente expresión, del \textbf{Art. 3.6} (pág 51)
+
+\begin{align*}
+  W_i = D_i + \Sigma f_1 *L_i + f_2 * S_i
+.\end{align*}
+
+Donde los valores de $f_1$ y $f_2$ quedan determinados mediante la \textbf{Tabla 3.3}
+(pág 51) según la carga de ocupación. Para vivienda, normalmente se consideran:
+
+\begin{align*}
+  f_1 &= 0.25 \\[5pt]
+  f_2 &= 0.2
+.\end{align*}
+
+
+
+
+\subsection{Método simplificado}
+
+Para poder utilizar éste método se deben cumplir ciertos requisitos. Lo que 
+se debe cumplir es:
+
+\begin{enumerate}
+  \item La relación de altura mínima del rectángulo que circunscribe la planta
+    es menor o igual que \textbf{2}.
+  \item La relación entre el lado mayor y el lado menor del rectángulo que
+    circunscribe la planta es menor o igual que \textbf{2}.
+  \item En alguna dirección existen al menos \textbf{2} muros exteriores
+    resistentes a fuerzas horizontales paralelos o casi paralelos que están
+    conectados a las losas o diafragmas un mínimo de \textit{0.5} de longitud
+    de la planta en la dirección de esos muros.
+  \item En la dirección estudiada existe al menos un muro resistente a fuerzas
+    horizontales que está unido a las losas o diafragmas en al menos \textbf{0.8}
+    de la longitud de la planta en esa dirección o dos muros conectados un 
+    mínimo de \textbf{0.5} de esa longitud.
+  \item Los muros mencionados en los puntos anteriores son contiguos en toda
+    la altura de la construcción, con una longitud al menos de 1.5 de su altura
+  \item La construcción tiene hasta \textbf{2} pisos y hasta \textbf{7m} de altura.
+  \item La distancia entre el centro de gravedad de las secciones horizontales
+    de los muros resistentes y el centro de gravedad de las masas de cada
+    nivel es igual a la mitad de la distancia entre los muros descritos en 3).
+\end{enumerate}
+
+\subsection{Procedimiento}
+
+\subsubsection{Coeficiente sísmico de diseño}
+
+A partir de la \textbf{Tabla 4.1} (pág 56), podemos determinar el coeficiente
+de la zona sísmica. La misma se resume a continuación:
+
+\begin{center}
+  \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Zona sísmica} & $C_n$ \\
+    \hline
+    1 & 0.23 \\
+    \hline
+    2 & 0.38 \\
+    \hline
+    3 & 0.44 \\
+    \hline
+    4 & 0.5 \\
+    \hline
+ \end{tabular} 
+\end{center}
+
+Con esto podemos determinar el coeficiente de diseño sísmico de diseño para
+clases A, B, C y D con la siguiente formula:
+
+\begin{align*}
+  C = C_n * \gamma_r
+.\end{align*}
+
+\subsubsection{Resultante de fuerzas horizontales}
+
+Se debe obtener una resultante de fuerzas horizontales equivalente a la acción
+sísmica operante según la dirección analizada. Esto se logra como se describe 
+en la \textbf{Sección 4.2.2} (pág 57):
+\begin{align*}
+  V_o = C * W
+.\end{align*}
+
+Donde $W$ es el peso de la estructura.
+
+Luego, este esfuerzo de corte $V_o$ es comparado con la capacidad a corte de los
+muros para cada dirección.o
+
+\subsubsection{Deformaciones}
+
+Según el \textbf{Artículo 4.3} (pág 57), no es necesario estudiar las
+deformaciones de las construcciones comprendidas dentro de esta verificación.
+Lo único que especifica es que la distancia mínima entre cualquier parte de
+la construcción y el plano medio del espacio de separación debe ser:
+\begin{align*}
+  Y_k \geq \SI{2.5}{cm}
+.\end{align*}
+
+
+
+
+
+
+\end{document}
