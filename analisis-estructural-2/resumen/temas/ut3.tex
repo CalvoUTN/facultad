@@ -280,6 +280,15 @@ es determinar los esfuerzos de corte en la base, que se logra como:
   W &= \Sigma W_i
 .\end{align*}
 
+\subsubsection{Factor de reducción}
+
+Según el \textbf{Art 5.1} del CIRSOC 103 (pág 59), se puede utilizar un factor
+de reducción $R$ que toma el comportamiento en estado último de la construcción.
+Lo mismo se hace mediante la  \textbf{Tabla 5.1} (pág 60). En los casos vistos,
+normalmente se considera para pórticos un $R=7$.
+
+\subsubsection{Coeficiente sísmico de diseño}
+
 El \textbf{coeficiente sísmico de diseño} se debe calcular según \textbf{Art 6.2.2}
 (pág 67), con las posibilidades:
 
@@ -301,23 +310,21 @@ baricentro de la carga gravitatoria $W_k$ ubicada en el nivel $k$ con la
 expresión dada en el  \textbf{Art 6.2.4.1} (pág 69).
 
 \begin{align*}
-  F_k = \frac{W_k * h_k * V_o}{\Sigma W_i * h_i}
+  F_k = \frac{W_k * h_k * V_o}{\Sigma W_k * h_k}
 .\end{align*}
+
+Esto nos permite obtener el corte $V_k$, que será igual a $V_o$ como:
+
+\begin{align*}
+  V_k = \Sigma F_k
+.\end{align*}
+
+Donde los valores de $W_k$ son los pesos en cada diafragma, y $h_k$ su altura.
 
 \subsubsection{Determinación del periodo}\label{periodo}
 
 
 % COMPLETAR VIENDO CLASE. CALCULO NO APROXIMADO DE PERIODO. 
 % Usa formula C.6.1 de los Comentarios del CIRSOC 103.
-
-\subsubsection{Factor de reducción}
-
-Según el \textbf{Art 5.1} del CIRSOC 103 (pág 59), se puede utilizar un factor
-de reducción $R$ que toma el comportamiento en estado último de la construcción.
-Lo mismo se hace mediante la  \textbf{Tabla 5.1} (pág 60). En los casos vistos,
-normalmente se considera para pórticos un $R=7$.
-
-
-
 
 \end{document}

@@ -6,8 +6,8 @@
 
 \subsection{Generalidades}
 
-Lo primero que debemos estudiar son dos caracteristicas del suelo: la granulometría
-y los límites de Atterberg. Además se deben conocer las caracteristicas geotecnicas
+Lo primero que debemos estudiar son dos características del suelo: la granulometría
+y los límites de Atterberg. Además se deben conocer las características geotecnicas
 del suelo, tales como la densidad de suelo seco $D_{ss}$, humedad del suelo, 
 límite líquido $LL$, límite plástico $LP$ y el índice de plasticidad $IP = LL - LP$.
 
@@ -32,7 +32,7 @@ Existen tres límites de Atterberg, que nos permiten clasificar el suelo cohesiv
     las dos mitades cuando la cápsula que la contiene es golpeada 25 veces desde
     una altura de $\SI{1}{cm}$ a dos golpes por segundo.
 
-  \item[Límite de contracción] es la humedad para la cuale el suelo no se contrae
+  \item[Límite de contracción] es la humedad para la cuales el suelo no se contrae
     cuando la humedad baja de ese punto.
 \end{description}
 
@@ -40,7 +40,7 @@ Existen tres límites de Atterberg, que nos permiten clasificar el suelo cohesiv
 
 Es equivalente al método AASHTO, y cuenta con siete grupos principales, que van
 desde el A-1 al A-7. Este método se desarrolló para la construcción de caminos.
-Los grupos estan agrupados por granulometría, límite líquido e índice de plasticidad.
+Los grupos están agrupados por granulometría, límite líquido e índice de plasticidad.
 También se puede obtener el indice de grupo con la siguiente formula:
 
 \begin{align*}
@@ -57,14 +57,20 @@ para las tareas de caminos:
   \item \textbf{A-4 a A-7:} regular a pobre material para subrasante.
 \end{itemize}
 
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../images/20210422/aashto}
+  \caption{Tabla AASTHO o HRB.}
+  \label{fig:aastho}
+\end{figure}
+
 \subsection{Reconocimiento del terreno}
 
 \subsubsection{Zanjas y calicatas}
 
-
 Podemos dar como ejemplo las \textbf{calicatas, zanjas y pozos}. Son un sistema
-simple y efectivo que nos permite la observación \textit{in situ} del terreno.
-Es un méotod válido para profundidades de hasta $\SI{5}{m}$ de profundidad. El
+simple y efectivo que nos permite la observación \textit{in-situ} del terreno.
+Es un método válido para profundidades de hasta $\SI{5}{m}$ de profundidad. El
 método es ideal para terrenos duros y para arcillas expansivas, ya que permite
 la determinación del nivel freático con precisión.
 Este tipo de ejecución además requiere entibaciones para $h \geq \SI{1.5}{m}$.
@@ -86,8 +92,9 @@ ensayos como el \textbf{Ensayo Proctor}, que nos permite la elaboración de un
 diagrama del que se pueden obtener los valores de la humedad óptima $H_{opt}$
  y la densidad Proctor máxima $\delta_{max}$.
 
-En este tema es importante el concepto de \textbf{valor soporte}, que será definitorio
-en la capacidad portante en el suelo como se ve en la imagen.
+En este tema es importante el concepto de \textbf{valor soporte},
+que será definitorio en la capacidad portante en el suelo como se ve en la 
+imagen.
 
 \begin{figure}[ht]
   \centering
@@ -121,12 +128,16 @@ directa o por retrodispersión.
 
 El \textbf{CBR} de un suelo es la relación en \% entre el esfuerzo necesario
 para penetrar un pistón de dimensiones dadas a una velocidad prefijada hasta una
-profundidad determinada en la muestra del suelo analizado y la presión correspondiente
-para la penetración en una muestra patrón con caracteristicas ideales. Su valor
-depende en gran manera de:
+profundidad determinada en la muestra del suelo analizado y la presión 
+correspondiente para la penetración en una muestra patrón con características 
+ideales. 
+
+Puede ser una representación indirecta de la resistencia al corte de un suelo y
+su valor depende en gran manera de:
+
 
 \begin{itemize}
-  \item Caracteristicas físico químicas del suelo.
+  \item Características físico químicas del suelo.
   \item Densidad seca.
   \item  Forma de compactación.
   \item  Humedad con el que fue compactado.
@@ -134,9 +145,16 @@ depende en gran manera de:
   \item Sobrecarga aplicada en el momento del ensayo.
 \end{itemize}
 
-En principio, la \textbf{humedad de compactación} generará un cambio significativo
-en el valor de CBR, mientras que la \textbf{sobrecarga} aumenta el CBR en los
-suelos friccionales.
+Es necesario, además, tener en cuenta tres aspectos:
+
+\begin{itemize}
+  \item \textbf{Humedad de compactación:} pequeñas variaciones de humedad de
+    compactación pueden afectar significativamente el CBR.
+  \item \textbf{Sobrecarga:} incrementa el valor del CBR en suelos friccionales,
+    y disminuye el hinchamiento en suelos cohesivos.
+  \item \textbf{Humedad de ensayo:} cuando se ensaya con el suelo embebido se
+    toma el equivalente a la situación más desfavorable.
+\end{itemize}
 
 \subsubsection{Correlación y valores orientativos}
 
@@ -148,11 +166,24 @@ El valor del CBR nos permite hacer las siguiente correlaciones:
   \item Se requieren ciertos valores para el paquete estructural:
     \begin{itemize}
     \item Base: $\text{CBR} \geq 40\%$
-    \item Subbase: $\text{CBR} \geq  40\%$
+    \item Sub-base: $\text{CBR} \geq  40\%$
     \item Subrasante buena: $\text{CBR} \sim 8\%$    
     \item Subrasante regular: $1\% \leq \text{CBR} \leq 5\%$
     \end{itemize}
 \end{itemize}
+
+\subsubsection{Ensayo dinámico simplificado}
+
+El ensayo dinámico simplificado nos permite hallar una relación entre el
+ensayo de Proctor y el CBR mediante gráficas, como se muestra en 
+\Cref{fig:proctorcbr}.
+
+\begin{figure}[htpb]
+  \centering
+  \includegraphics[width=0.8\textwidth]{../images/20210422/proctorcbr}
+  \caption{Relación Proctor-CBR}
+  \label{fig:proctorcbr}
+\end{figure}
 
 \subsubsection{Módulo de reacción de la subrasante $k$}
 
@@ -164,7 +195,10 @@ al suelo.
 
 Para su determinación, la presión del plato debe ser \textbf{similar} a la utilizar
 en el pavimento en servicio. Además, el valor de $k$ dependerá en gran medida
-del \textbf{diámetro del plato}.
+del \textbf{diámetro del plato}, donde la deflexión generalmente aumenta cuando
+se disminuye el diámetro. Normalmente para pavimentos rígidos se adoptan 
+diámetros de 76cm.
+
 
 \subsection{Suelos expansivos}
 
@@ -175,11 +209,12 @@ de subrasante producen daños severos en los pavimentos que es denominado
 
 Este tipo de suelos tiene deformaciones significativamente mas grandes que las 
 elásticas, generando un movimiento desigual y causando daños tales como grietas
-o quiebres en los pavimentos. En general, el componente arcilloso que provoca esto
-es la \textbf{montmorillonita}, que es altamente expansiva. 
+o quiebres en los pavimentos. 
 
-Las partículas de arcilla tienen una carga neta negativa, por lo que el agua es
-atraída, y a medida que el agua es \textit{adsorbida}, empuja partículas de archilla
+En general, el componente arcilloso que provoca esto es la 
+\textbf{montmorillonita}, que es altamente expansiva.  Las partículas de arcilla
+tienen una carga neta negativa, por lo que el agua es atraída, y a medida que 
+el agua es \textit{adsorbida}, empuja partículas de arcilla
 causando el hinchamiento.
 
 \subsubsection{Propiedades del suelo}
@@ -188,8 +223,8 @@ Las propiedades que pueden afectar esto son:
 
 \begin{description}
   \item[Mineralogía de la arcilla] principalmente la montmorillonita, que genera
-    grandes cambios de volumnes.
-  \item[Agua química del suelo]
+    grandes cambios de volumes.
+  \item[Agua del suelo química] particularmente cuando $Mg^{2+} \leq Na^{+}$.
   \item[Succión del suelo] más agua atraída cuando la succión es alta.
   \item[Plasticidad] un alto valor de índice plástico genera más hinchamiento.
   \item[Estructura del suelo] las arcillas dispersivas se expanden con la 
@@ -197,18 +232,23 @@ Las propiedades que pueden afectar esto son:
   \item[Densidad seca] una mayor densidad da a un mayor potencial de hinchamiento.
 \end{description}
 
+
+Por otro lado, las condiciones ambientales que pueden afectar son: el clima,
+la profundidad del agua subterránea, fuentes de agua cercanos, permeabilidad
+y temperatura.
+
 \subsubsection{Medidas de control}
 
-Ciertas posibilidades para el control de esta problematica son las siguientes:
+Ciertas posibilidades para el control de esta problemática son las siguientes:
 
 \begin{enumerate}
-  \item Relocalización del trazado.
+  \item Re-localización del trazado.
   \item Reemplazar el suelo expansivo por uno que no lo sea.
   \item Modificar las propiedades expansivas del suelo mediante acciones 
     físicas o químicas.
     \begin{description}
-      \item[Físicas] se pueed inundar el suelo de manera que se produzca la
-        expansión previa la construcción, o esclarificar, rastrear y agregar arena,
+      \item[Físicas] se puede inundar el suelo de manera que se produzca la
+        expansión previa la construcción, o escarificar, rastrear y agregar arena,
         o en todo caso agregar un revestimiento no expansivo.
       \item[Químicas] estabilización mediante cal, inyecciones, etc.  
     \end{description}
@@ -251,10 +291,10 @@ Las heladas tiene dos efectos perjudiciales en los pavimentos:
   \item Ablandamiento de la subrasante por el agua de deshielo.
 \end{enumerate}
 
-La profundida de penetración depende de la temperatura bajo el punto de congelamiento
-y del tiempo que la misma se mantiene, ya que la transimisión de calor no es 
-instantanea, por lo que esto es un problema en lugares donde las bajas temperaturas
-se mantienen durante tiempos prolongados.
+La profundidad de penetración depende de la temperatura bajo el punto de
+congelamiento y del tiempo que la misma se mantiene, ya que la transmisión de 
+calor no es instantánea, por lo que esto es un problema en lugares donde las 
+bajas temperaturas se mantienen durante tiempos prolongados.
 
 \subsubsection{Influencia sobre la estructura del suelo}
 
@@ -270,10 +310,10 @@ que las arenas y los suelos arcillosos resultan menos sensibles.
 
 \subsubsection{Tratamiento de suelos susceptibles}
 
-Existen varias soluciones para esta problematica, como:
+Existen varias soluciones para esta problemática, como:
 
 \begin{enumerate}
-  \item Retirar el suelo susceptible a las heladas y reemplzarlo por uno no
+  \item Retirar el suelo susceptible a las heladas y reemplazarlo por uno no
     susceptible.
   \item Ubicar y compactar el suelo no susceptible con un espesor tal que pueda
     evitar la congelación.
@@ -284,6 +324,20 @@ Existen varias soluciones para esta problematica, como:
   \item Estabilizar el suelo mediante la instalación de una barrera capilar, que 
     pueden ser dos capas de geotextil.
 \end{enumerate}
+
+\subsection{Drenaje}
+
+El diseño de drenes debe considerar fuentes de humedad tales como la 
+infiltración y el agua subterránea. Podemos encontrar varios tipos de drenes,
+tales como:
+
+\begin{itemize}
+  \item Drenaje longitudinal (drenaje de borde o subdren).
+  \item Drenes transversales y horizontales.
+  \item Bases permeables.
+  \item Sistemas de pozos.
+\end{itemize}
+
 
 \subsection{Tecnología de áridos}
 
