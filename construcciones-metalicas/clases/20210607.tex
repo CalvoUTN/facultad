@@ -1,0 +1,96 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Flexión}
+
+Un miembro sometido a flexión es un miembro estructural sobre el que actuan
+cargas perpendiculares a su eje que producen flexión y corte. 
+
+Normalmente se utilizan perfiles canal, vigas W, secciones armadas y abiertas.
+
+Podemos distinguir dos tipos de vigas según su soporte lateral:
+
+\begin{description}
+  \item[Vigas con soporte lateral adecuado] son aquellas con arriostramiento poco
+    espaciado, y donde la inestabilidad global no controla capacidad.
+  \item[Vigas sin soporte lateral] son arriostramientos con espaciado mayor, y
+    donde la inestabilidad global puede controlar la capacidad.
+\end{description}
+
+De acuerdo a la geometría de la sección
+
+\begin{description}
+  \item[Vigas de sección compacta] 
+  \item[Vigas de seción no compacta] 
+  \item[Vigas de sección esbelta] 
+\end{description}
+
+\subsection{Modos de falla}
+
+Se pueden distinguir varios tipos de falla, tales como:
+
+\begin{description}
+  \item[Plastificación de la sección] se da cuand se puede llegar a la
+    plastificación total sin necesitar de llegar a las tensiones críticas de
+    pandeo.
+  \item[Pandeo lateral torsional] 
+  \item[Pandeo local] se puede dar tanto en el alma o en el ala.
+\end{description}
+
+Las hipótesis iniciales son las comunes: no hay inestabilidad, comportamiento
+perfectamente elástico-plástico, no hay fractura ni fatiga. Se Puede conseguir
+un momento plástico $M_p$ que es donde se tiene la máxima tensión debido a que 
+la sección se encuentra plastificada.
+
+A partir del desarrollo de la sección sometida a un momento plástico se puede 
+hallar el \textbf{módulo plástico} que se define como:
+
+\begin{align*}
+  Z_x = A_c * \overline{y_c} + A_t * \overline{y_t}
+.\end{align*}
+
+Es te valor se puede relacionar con el modulo elástico como:
+
+\begin{align*}
+  \alpha = \frac{Z_x}{S_x}
+.\end{align*}
+
+Esta relación tiende a ser 1.12 a 1.2 para secciones doble T.
+
+Cuando consideramos el \textbf{pandeo lateral torcional}, podemos hablar de sus
+causas, que son tensiones residuales e imperfecciones iniciales.
+Mediante el uso de elementos finitos se puede desarrollar la siguiente formula
+para determinar el momento crítico:
+
+\begin{align*}
+  M_{cr} = \frac{\pi}{L} * \sqrt{E*I_y *GJ} *\sqrt{1+\frac{\pi^2}{L^2}*\frac{E*C_w}{GJ} }  
+.\end{align*}
+
+Vemos que los factores que afectan al momento crítico son princialmente la
+distancia de arriostriamiento, donde a mayor longitud, decrese el momento.
+
+\subsubsection{Longitudes de arriostramiento límite}
+
+La longitud no arriostrada límite se determina de la siguietne forma:
+
+\textit{Para cargas aplicadas enyy el alma o en el ala inferior de la viga}
+
+\begin{align*}
+  L_p = 1.76 * r_y \sqrt{\frac{E}{F_{yf}}} 
+.\end{align*}
+
+\textit{Para cargas aplicadas en el ala superior de la viga}
+
+\begin{align*}
+  L_p = 1.59 * r_y \sqrt{\frac{E}{F_{yf}}} 
+.\end{align*}
+
+Por otro lado, se determina la longitud lateralmente no arriostrada $L_r$ y
+su correspondiente momento $M_r$ con otras formulas que se encuentran en el 
+reglamento CIRSOC 201.
+
+
+
+
+\end{document}
