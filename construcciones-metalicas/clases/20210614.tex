@@ -1,0 +1,30 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Resistencia de diseño al corte}
+
+Se deben considerar la plastificación del alma, pandeo inelástico del alma y
+pandeo elástico del alma.
+
+Generalmente se verifica como:
+
+\begin{align*}
+  \phi_v i &* V_n  \\[5pt]
+  V_n = \tau_{cr} * A_w &= (0.6*F_{yw} * C_v)*A_w
+.\end{align*}
+
+Donde el valor del $\tau_{cr}$ se puede obtener a partir de la formula de
+Juraski como:
+
+\begin{align*}
+  \tau = \frac{V*S}{b*J} 
+.\end{align*}
+
+Donde $S$ es el momento estático de la sección con respecto al baricentro.
+
+En el caso de \textbf{vigas armadas} se debe tener en cuenta un efecto de campo
+de tensión diagonal. El alma atiesada por las alas tiene una resistencia post
+pandeo, incrementando la capacidad del corte.
+
+\end{document}
